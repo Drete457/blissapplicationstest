@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import '../CSS/buttonlink.css';
+import '../../CSS/buttonlink.css';
 import { Link } from 'react-router-dom';
 import buttonLinkFormat from '../../Type/buttonlinkformat';
 
