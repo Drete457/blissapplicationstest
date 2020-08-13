@@ -20,7 +20,7 @@ export default function Generate() {
         {numberToDisplay.three}
         {numberToDisplay.four}
         {numberToDisplay.five}
-        <button onClick={() => setNumberToDisplay(randomizer(numberToDisplay))}>GENERATE</button>
+        <button className="button" onClick={() => setNumberToDisplay(randomizer(numberToDisplay))}>GENERATE</button>
       </DefaultPage>
     </>
   );
