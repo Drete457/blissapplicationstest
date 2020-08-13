@@ -4,10 +4,10 @@ import randomizer from '../Components/randomizer';
 
 const DefaultRandomNumber = {
   one: 1,
-  two: 1,
-  three: 1,
-  four: 1,
-  five: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
 }
 
 export default function MainView() {
