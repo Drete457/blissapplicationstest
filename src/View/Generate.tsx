@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import '../CSS/App.css';
+import React, { useState } from 'react';
 import randomizer from '../Components/randomizer';
+import DefaultPage from '../Components/DefaultPage';
 
 const DefaultRandomNumber = {
   one: 1,
@@ -13,14 +13,16 @@ const DefaultRandomNumber = {
 export default function Generate() {
   const [numberToDisplay, setNumberToDisplay] = useState(DefaultRandomNumber);
   return (
-    <div className="App">
-     {numberToDisplay.one}
-      {numberToDisplay.two}
-      {numberToDisplay.three}
-      {numberToDisplay.four}
-      {numberToDisplay.five}
-      <button onClick={() => setNumberToDisplay(randomizer(numberToDisplay))}>GENERATE</button>
-    </div>
+    <>
+      <DefaultPage>
+        {numberToDisplay.one}
+        {numberToDisplay.two}
+        {numberToDisplay.three}
+        {numberToDisplay.four}
+        {numberToDisplay.five}
+        <button onClick={() => setNumberToDisplay(randomizer(numberToDisplay))}>GENERATE</button>
+      </DefaultPage>
+    </>
   );
 }
 
