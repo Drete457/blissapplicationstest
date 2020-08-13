@@ -12,7 +12,6 @@ export default function consecutive(numberToVerify: numberFormat): number {
       }
     }
   })
-  console.log(num)
   return num;
 }
 

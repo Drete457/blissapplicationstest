@@ -9,7 +9,6 @@ export default function randomizer(DefaultRandomNumber: numberFormat): numberFor
     keys.map((key) => {
         let randomNumber = 0;
         do {
-            console.log("entrou")
             randomNumber = consecutive(newRNumber);
             newRNumber = {
                 ...newRNumber,
