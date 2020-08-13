@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './CSS/index.css';
-import MainView from './View/MainView';
+import Patch from './Controller/router';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainView />
+    <Patch />
   </React.StrictMode>,
   document.getElementById('root')
 );
