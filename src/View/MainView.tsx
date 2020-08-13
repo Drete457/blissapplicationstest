@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../CSS/App.css';
 import randomizer from '../Components/randomizer';
 
@@ -11,7 +11,7 @@ const DefaultRandomNumber = {
 }
 
 export default function MainView() {
-  const numberToDisplay = randomizer(DefaultRandomNumber);
+  const [numberToDisplay, setNumberToDisplay] = useState(DefaultRandomNumber);
   return (
     <div className="App">
      {numberToDisplay.one}
@@ -19,6 +19,7 @@ export default function MainView() {
       {numberToDisplay.three}
       {numberToDisplay.four}
       {numberToDisplay.five}
+      <button onClick={() => setNumberToDisplay(randomizer(numberToDisplay))}>GENERATE</button>
     </div>
   );
 }
