@@ -12,17 +12,21 @@ const DefaultRandomNumber = {
   five: 5,
 }
 
+function generateRandomNumbers(set: any) {
+  set(() => {
+    let array: Array<object> = [];
+    for (let i = 0; i < 5; i++) {
+      array.push(randomizer(DefaultRandomNumber));
+    }
+    return array;
+  })
+}
+
 export default function Generate() {
   const [numberToDisplay, setNumberToDisplay]: any[] = useState([]);
 
   useEffect(() => {
-    setNumberToDisplay(() => {
-      let array: Array<object> = [];
-      for (let i = 0; i < 5; i++) {
-        array.push(DefaultRandomNumber);
-      }
-      return array;
-    })
+    generateRandomNumbers(setNumberToDisplay)
   }, [])
   
   return (
@@ -33,7 +37,7 @@ export default function Generate() {
           return (<Input key={index} type="text" className="number" value={text} readOnly={true} />)
         })}
         <br />
-        <Button className="buttongenerate" onClick={() => {}}>GENERATE</Button>
+        <Button className="buttongenerate" onClick={() => {generateRandomNumbers(setNumberToDisplay)}}>GENERATE</Button>
         <Button className="buttonsave" onClick={() => {}}>SAVE</Button>
       </DefaultPage>
     </>
