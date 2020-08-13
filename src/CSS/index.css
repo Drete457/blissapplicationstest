@@ -8,14 +8,29 @@ body {
   margin: 0;
   padding: 0;
   background: gray;
+  text-align: center;
 }
 
 .defaultpage{
   padding-top: 98px;
   padding-left: 1%;
-  text-align: center;
 }
 
-.button{
+.buttongenerate{
   padding: 5px 24px;
+  color: blue;
+}
+
+.buttonsave{
+  padding: 5px 24px;
+  margin-left: 3%;
+  background-color:blue;
+  color: white;
+}
+
+.number {
+  margin-left: 1%;
+  margin-bottom: 1%;
+  max-block-size: 4vh;
+  max-inline-size: 4vw;
 }
