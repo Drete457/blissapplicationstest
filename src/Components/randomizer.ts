@@ -1,7 +1,7 @@
 /* eslint-disable array-callback-return */
 import numberFormat from '../Type/numberformat';
-import random from '../Components/random';
 import hasRepeatNumber from './hasRepeatNumber';
+import consecutive from './consecutive_asc_or_des';
 
 export default function randomizer(DefaultRandomNumber: numberFormat): numberFormat {
     const keys = Object.keys(DefaultRandomNumber);
@@ -9,12 +9,13 @@ export default function randomizer(DefaultRandomNumber: numberFormat): numberFor
     keys.map((key) => {
         let randomNumber = 0;
         do {
-            randomNumber = random();
+            console.log("entrou")
+            randomNumber = consecutive(newRNumber);
             newRNumber = {
                 ...newRNumber,
                 [key]: randomNumber,
             }
         } while (hasRepeatNumber(newRNumber))
     });
-    return newRNumber;
+    return  newRNumber;
 }
