@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import inputformat from '../Type/inputformat';
+import inputformat from '../../Type/inputformat';
 
 export default function Input({ type, className, value, readOnly }: inputformat): ReactElement {
   return (

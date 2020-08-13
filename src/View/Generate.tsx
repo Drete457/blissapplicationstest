@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import randomizer from '../Components/randomizer';
-import DefaultPage from '../Components/DefaultPage';
-import Button from '../Components/button';
-import Input from '../Components/input';
+import randomizer from '../Components/random/randomizer';
+import DefaultPage from '../Components/view/DefaultPage';
+import Button from '../Components/buttons/button';
+import Input from '../Components/view/input';
 
 const DefaultRandomNumber = {
   one: 1,

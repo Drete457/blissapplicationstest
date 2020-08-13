@@ -1,4 +1,4 @@
-import numberFormat from "../Type/numberformat";
+import numberFormat from "../../Type/numberformat";
 
 export default function hasRepeatNumber(numberToVerify: numberFormat): boolean {
     const number = Object.values(numberToVerify);

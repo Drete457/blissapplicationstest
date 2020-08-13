@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultPage from '../Components/DefaultPage';
+import DefaultPage from '../Components/view/DefaultPage';
 
 export default function Saved() {
   return (

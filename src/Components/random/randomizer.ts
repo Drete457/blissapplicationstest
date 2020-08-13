@@ -1,5 +1,5 @@
 /* eslint-disable array-callback-return */
-import numberFormat from '../Type/numberformat';
+import numberFormat from '../../Type/numberformat';
 import hasRepeatNumber from './hasRepeatNumber';
 import consecutive from './consecutive_asc_or_des';
 

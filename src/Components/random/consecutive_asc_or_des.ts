@@ -1,5 +1,5 @@
 /* eslint-disable array-callback-return */
-import numberFormat from "../Type/numberformat";
+import numberFormat from "../../Type/numberformat";
 import random from "./random";
 
 export default function consecutive(numberToVerify: numberFormat): number {
