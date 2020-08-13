@@ -10,7 +10,7 @@ const DefaultRandomNumber = {
   five: 5,
 }
 
-export default function MainView() {
+export default function Generate() {
   const [numberToDisplay, setNumberToDisplay] = useState(DefaultRandomNumber);
   return (
     <div className="App">
