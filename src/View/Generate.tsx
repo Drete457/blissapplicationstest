@@ -6,10 +6,10 @@ import Input from '../Components/view/input';
 
 const DefaultRandomNumber = {
   one: 1,
-  two: 2,
-  three: 3,
-  four: 4,
-  five: 5,
+  two: 1,
+  three: 1,
+  four: 1,
+  five: 1,
 }
 
 function generateRandomNumbers(set: any) {
