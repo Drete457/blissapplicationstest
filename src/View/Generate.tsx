@@ -3,6 +3,9 @@ import randomizer from '../Components/random/randomizer';
 import DefaultPage from '../Components/view/DefaultPage';
 import Button from '../Components/buttons/button';
 import Input from '../Components/view/input';
+import { useSelector, useDispatch } from 'react-redux';
+import { pinsState } from '../Components/redux/storeReducer';
+import { addPin } from '../Components/redux/actions';
 
 const DefaultRandomNumber = {
   one: 1,
@@ -23,6 +26,16 @@ function generateRandomNumbers(set: any) {
 }
 
 export default function Generate() {
+  //use to write on the screen - transfer to save.tsx
+  const pinsArray = useSelector<pinsState, pinsState["pins"]>((state) => state.pins)
+  
+  const dispatch = useDispatch()
+
+  //pass the action to the button save
+  const onAddPins = (pins: string[]) => {
+    dispatch(addPin(pins))
+  }
+ 
   const [numberToDisplay, setNumberToDisplay]: any[] = useState([]);
 
   useEffect(() => {
