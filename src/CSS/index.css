@@ -36,3 +36,8 @@ body {
   max-block-size: 4vh;
   max-inline-size: 4vw;
 }
+
+.buttondelete {
+  background-color: red;
+  color: white;
+}

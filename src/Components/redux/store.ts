@@ -1,4 +1,4 @@
 import { createStore } from 'redux';
-import { save } from './storeReducer';
+import { action } from './storeReducer';
 
-export const store = createStore(save);
+export const store = createStore(action);

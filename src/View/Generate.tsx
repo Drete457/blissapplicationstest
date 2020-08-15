@@ -3,7 +3,7 @@ import randomizer from '../Components/random/randomizer';
 import DefaultPage from '../Components/view/DefaultPage';
 import Button from '../Components/buttons/button';
 import { useDispatch, useSelector } from 'react-redux';
-import { addPins } from '../Components/redux/actions';
+import { addPin } from '../Components/redux/actions';
 import { numberFormat } from '../Type/numberformat';
 import DisplayPins from '../Components/displayPins';
 import { inicialValue } from '../Components/inicialDefault';
@@ -21,7 +21,7 @@ export default function Generate() {
   const [numberToDisplay, setNumberToDisplay]: any = useState({});
 
   useEffect(() => {
-    setNumberToDisplay(inicialValue)
+    setNumberToDisplay(randomizer(inicialValue))
   }, [])
 
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ export default function Generate() {
     const result = pinsArray.indexOf(pins);
 
     if (result === -1) {
-      dispatch(addPins(pins));
+      dispatch(addPin(pins));
       setMessage('Pins have been saved successfully');
       setWasSave(true);
     } else {

@@ -1,20 +1,31 @@
 import React from 'react';
 import DefaultPage from '../Components/view/DefaultPage';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { pinsState } from '../Components/redux/storeReducer';
 import DisplayPins from '../Components/displayPins';
-import { numberFormat } from '../Type/numberformat';
 import randomKey from '../Components/random/randomKey';
-
-interface Pin { value: numberFormat }
+import Button from '../Components/buttons/button';
+import { deletePin } from '../Components/redux/actions';
 
 export default function Saved() {
   const pinsArray = useSelector<pinsState, pinsState["pins"]>((state) => state.pins);
+
+  const dispatch = useDispatch();
+  const deletePins = (pins: object) => {
+      dispatch(deletePin(pins));
+  }
+
   return (
     <>
       <DefaultPage>
         {pinsArray.map((pins: any) => {
-          return (<p key={randomKey()}><DisplayPins numberToDisplay={pins} /></p>)
+          return (
+            <div key={randomKey()}>
+            <p><DisplayPins numberToDisplay={pins} />
+            <Button className="buttondelete" onClick={() => {deletePins(pins)}}>DELETE</Button>
+            </p>
+          </div>
+          )
         })}
       </DefaultPage>
     </>
