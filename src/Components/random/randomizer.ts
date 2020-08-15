@@ -1,16 +1,17 @@
 /* eslint-disable array-callback-return */
 import { numberFormat } from '../../Type/numberformat';
-import hasRepeatNumber from './hasRepeatNumber';
+import verification from './verification';
 import random from './random';
 
-export default function randomizer(DefaultRandomNumber: numberFormat): numberFormat {
-    const keys = Object.keys(DefaultRandomNumber);
-    let newRNumber = DefaultRandomNumber;
+export default function randomizer(numberToWork: numberFormat): numberFormat {
+    const keys = Object.keys(numberToWork);
+    let newRNumber = numberToWork;
+
     keys.map((key) => {
 
         let randomNumber = random();
 
-        while (hasRepeatNumber(newRNumber, randomNumber)) {
+        while (verification(newRNumber, randomNumber)) {
             randomNumber = random();   
         };
 
@@ -19,7 +20,7 @@ export default function randomizer(DefaultRandomNumber: numberFormat): numberFor
             [key]: randomNumber,
         };
     })
-    
+   
     return newRNumber;
 }
 

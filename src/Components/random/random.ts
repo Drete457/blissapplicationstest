@@ -1,4 +1,6 @@
 export default function random(): number {
-    let random = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
-    return random;
-  }
+  const min = 10000;
+  const max = 99999;
+  const random = Math.floor(Math.random() * (max - min + 1)) + min;
+  return random;
+}

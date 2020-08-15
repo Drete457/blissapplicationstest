@@ -29,6 +29,8 @@ body {
 }
 
 .number {
+  font-size: large;
+  text-align: center;
   margin-left: 1%;
   margin-bottom: 1%;
   max-block-size: 4vh;
