@@ -18,7 +18,8 @@ export default function Saved() {
   return (
     <>
       <DefaultPage>
-        {pinsArray.map((pins: any) => {
+        {pinsArray.length === 0 && <h1>There isn't any saved pin list</h1>}
+        {pinsArray.length > 0 && pinsArray.map((pins: any) => {
           return (
             <div key={randomKey()}>
             <p><DisplayPins numberToDisplay={pins} />
