@@ -1,7 +1,6 @@
 /* eslint-disable array-callback-return */
 export default function sequence(arrayNumber: number[]): boolean{
     let result = false;
-    console.log(arrayNumber)
 
     arrayNumber.filter((value1, index) => {
       

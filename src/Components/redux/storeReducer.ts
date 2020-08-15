@@ -5,13 +5,7 @@ export interface pinsState {
 }
 
 const inicialState = {
-    pins: [{
-        one: 11111,
-        two: 11111,
-        three: 11111,
-        four: 11111,
-        five: 11111,
-      }],
+    pins: [],
 }
 
 export const save = (state: pinsState = inicialState, action: actionFormat) => {
