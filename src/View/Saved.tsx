@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DefaultPage from '../Components/view/DefaultPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { pinsState } from '../Components/redux/storeReducer';

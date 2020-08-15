@@ -28,13 +28,21 @@ body {
   color: white;
 }
 
-.number {
+.number, .name {
   font-size: large;
   text-align: center;
   margin-left: 1%;
   margin-bottom: 1%;
+}
+
+.number { 
   max-block-size: 4vh;
   max-inline-size: 4vw;
+}
+
+.name {
+  max-block-size: 4vh;
+  max-inline-size: 15vw;
 }
 
 .buttondelete {

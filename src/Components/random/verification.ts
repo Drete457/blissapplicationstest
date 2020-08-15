@@ -1,9 +1,9 @@
 /* eslint-disable array-callback-return */
-import { numberFormat } from "../../Type/numberformat";
+import { numberFormatInicial } from "../../Type/numberformat";
 import consecutive from './consecutive_asc_or_des';
 import sequence from "./sequence";
 
-export default function verification(numberToVerify: numberFormat, randomNumber: number): boolean {
+export default function verification(numberToVerify: numberFormatInicial, randomNumber: number): boolean {
   const values = Object.values(numberToVerify);
   const array = randomNumber.toString().split('').map(Number);
 

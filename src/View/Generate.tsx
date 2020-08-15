@@ -11,7 +11,7 @@ import { pinsState } from '../Components/redux/storeReducer';
 
 function generateRandomNumbers(set: any, numberToDisplay: numberFormat, setWasSave: any): void {
   setWasSave(false);
-  set(() => randomizer(numberToDisplay));
+  set(() => randomizer(inicialValue));
 };
 
 export default function Generate() {
@@ -27,9 +27,8 @@ export default function Generate() {
   const dispatch = useDispatch();
   const onAddPins = (pins: object) => {
     const result = pinsArray.indexOf(pins);
-
     if (result === -1) {
-      dispatch(addPin(pins));
+      dispatch(addPin({'name': '',...pins}));
       setMessage('Pins have been saved successfully');
       setWasSave(true);
     } else {

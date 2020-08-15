@@ -1,6 +1,6 @@
-import { numberFormat } from "../Type/numberformat";
+import { numberFormatInicial } from "../Type/numberformat";
 
-export const inicialValue: numberFormat = {
+export const inicialValue: numberFormatInicial = {
     one: 11111,
     two: 11111,
     three: 11111,

@@ -1,9 +1,9 @@
 /* eslint-disable array-callback-return */
-import { numberFormat } from '../../Type/numberformat';
+import { numberFormatInicial } from '../../Type/numberformat';
 import verification from './verification';
 import random from './random';
 
-export default function randomizer(numberToWork: numberFormat): numberFormat {
+export default function randomizer(numberToWork: numberFormatInicial): numberFormatInicial {
     const keys = Object.keys(numberToWork);
     let newRNumber = numberToWork;
 
@@ -20,8 +20,8 @@ export default function randomizer(numberToWork: numberFormat): numberFormat {
             [key]: randomNumber,
         };
     })
-   
-    return newRNumber;
+
+    return {...newRNumber}
 }
 
 
