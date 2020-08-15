@@ -1,11 +1,17 @@
 import { actionFormat } from "../../Type/actionformat"
 
 export interface pinsState {
-    pins: string[],
+    pins: object[],
 }
 
 const inicialState = {
-    pins: ["11111"],
+    pins: [{
+        one: 11111,
+        two: 11111,
+        three: 11111,
+        four: 11111,
+        five: 11111,
+      }],
 }
 
 export const save = (state: pinsState = inicialState, action: actionFormat) => {
@@ -13,5 +19,7 @@ export const save = (state: pinsState = inicialState, action: actionFormat) => {
         case "ADD_PINS": {
             return { ...state, pins: [...state.pins, action.payload] }
         }
+        default:
+            return state
     }
 }

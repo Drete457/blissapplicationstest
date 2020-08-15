@@ -8,7 +8,9 @@ export default function Saved() {
   return (
     <>
       <DefaultPage>
-       <p>elements</p>
+        {pinsArray.map((value) => {
+          return <p>{value}</p>
+       })}
       </DefaultPage>
     </>
   );
