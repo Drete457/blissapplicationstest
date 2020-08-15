@@ -1,6 +1,6 @@
 import React from 'react';
 import TopMenu from './topmenu';
-import defaultPageFormat from '../../Type/defaultpage';
+import { defaultPageFormat } from '../../Type/defaultpage';
 
 export default function DefaultPage({ children }: defaultPageFormat) {
   return (

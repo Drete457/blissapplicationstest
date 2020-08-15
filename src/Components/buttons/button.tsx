@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import buttonFormat from '../../Type/buttonformat';
+import { buttonFormat } from '../../Type/buttonformat';
 
 export default function Button({ className, children, onClick }: buttonFormat): ReactElement {
   return (
