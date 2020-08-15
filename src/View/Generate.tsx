@@ -6,34 +6,31 @@ import Input from '../Components/view/input';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPins } from '../Components/redux/actions';
 import { pinsState } from '../Components/redux/storeReducer';
+import randomKey from '../Components/random/randomKey';
 
-function generateRandomNumbers(set: any) {
+/*function generateRandomNumbers(set: any) {
   set(() => {
     let array: Array<object> = [];
     for (let i = 0; i < 5; i++) {
-      array.push(randomizer(DefaultRandomNumber));
+  //    array.push(randomizer());
     }
     return array;
   })
-}
+}*/
 
 export default function Generate() {
-
-  const pinsArray = useSelector<pinsState, pinsState["pins"]>((state) => state.pins)
+  const pinsArray = useSelector<pinsState, pinsState["pins"]>((state) => state.pins);
+  const [numberToDisplay, setNumberToDisplay]: any[] = useState([]);
   
-  const dispatch = useDispatch()
-
   //pass the action to the button save
+  const dispatch = useDispatch();
   const onAddPins = (pins: object) => {
     dispatch(addPins(pins))
   }
  
-  const [numberToDisplay, setNumberToDisplay]: any[] = useState(pinsArray);
-  console.log(numberToDisplay)
-
-  /*useEffect(() => {
-    generateRandomNumbers(setNumberToDisplay)
-  }, [])*/
+  useEffect(() => {
+    setNumberToDisplay(pinsArray)
+  }, [pinsArray])
   
   return (
     <>
@@ -41,7 +38,7 @@ export default function Generate() {
         {numberToDisplay.map((value: object) => {
           const arrayOfPins: string[] = Object.values(value);
           const arrayOfPinsToDisplay = arrayOfPins.map((value) => {
-            return (<Input key={"0" + value} type="text" className="number" value={value} readOnly={true} />)
+            return (<Input key={randomKey()} type="text" className="number" value={value} readOnly={true} />)
           });
           return arrayOfPinsToDisplay;
         })}
@@ -52,5 +49,4 @@ export default function Generate() {
     </>
   );
 }
-//() => {generateRandomNumbers(setNumberToDisplay)}
 
