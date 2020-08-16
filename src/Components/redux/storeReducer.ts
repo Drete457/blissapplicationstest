@@ -1,4 +1,4 @@
-import { actionSaveFormat, actionDeleteFormat } from "../../Type/actionformat"
+import { actionSaveFormat, actionDeleteFormat, actionUpdateFormat } from "../../Type/actionformat"
 
 export interface pinsState {
     pins: object[],
@@ -8,10 +8,13 @@ const inicialState = {
     pins: [],
 };
 
-export const action = (state: pinsState = inicialState, action: actionSaveFormat | actionDeleteFormat) => {
+export const action = (state: pinsState = inicialState, action: actionSaveFormat | actionUpdateFormat | actionDeleteFormat) => {
     switch (action.type) {
         case "ADD_PINS": {
             return { ...state, pins: [...state.pins, action.payload] };
+        }
+        case "UPDATE": {
+            return { ...state, pins: [...action.payload] };
         }
         case "DELETE": {
             const index = state.pins.indexOf(action.payload);

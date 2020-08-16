@@ -30,18 +30,18 @@ export default function Generate() {
     let result = false;
     const pinValues: number[] = Object.values(pins);
 
-    pinsArray.map((value) => {
+    pinsArray.filter((value) => {
       const values = Object.values(value);
-      
+
       if (values[1] === pinValues[0] && values[2] === pinValues[1] && values[3] === pinValues[2] && values[4] === pinValues[3] && values[5] === pinValues[4]) {
         result = true;
       }
-      
+
       return null;
     });
 
-  if (!result) {
-    dispatch(addPin({'name': '', ...pins}));
+    if (!result) {
+      dispatch(addPin({ 'name': '', ...pins }));
       setMessage('Pins have been saved successfully');
       setWasSave(true);
     } else {
