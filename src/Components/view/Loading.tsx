@@ -21,7 +21,6 @@ export default function LoadingScreen() {
                     </div>
                 </div>
             </div>
-
         </>
     );
 }

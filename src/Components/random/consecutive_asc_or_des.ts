@@ -8,7 +8,8 @@ export default function consecutive(array: number[]): boolean {
 
     if (sequence === difference && difference !== 0) {
       result.push(value);
-    }
+    };
+
     sequence = (difference === 1 || difference === -1) ? difference : 0;
   });
 
