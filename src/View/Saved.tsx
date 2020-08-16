@@ -4,7 +4,6 @@ import { pinsState } from '../Components/redux/storeReducer';
 import { deletePin } from '../Components/redux/actions';
 import DefaultPage from '../Components/view/DefaultPage';
 import DisplayPins from '../Components/displayPins';
-import randomKey from '../Components/random/randomKey';
 import Button from '../Components/buttons/button';
 
 export default function Saved() {
@@ -15,19 +14,21 @@ export default function Saved() {
     dispatch(deletePin(pins));
   };
 
+  const display = pinsArray.map(( pins: any, index: number ) => {
+    return (
+      <div key={index}>
+        <p key={index}><DisplayPins numberToDisplay={pins} />
+      <Button className="buttondelete" onClick={() => {deletePins(pins)}}>DELETE</Button>
+      </p>
+    </div>
+    )
+  })
+
   return (
     <>
       <DefaultPage>
         {pinsArray.length === 0 && <h1>There isn't any saved pin list</h1>}
-        {pinsArray.length > 0 && pinsArray.map(( pins: any, index: number ) => {
-          return (
-            <div key={randomKey()}>
-              <p><DisplayPins numberToDisplay={pins} index={index}/>
-            <Button className="buttondelete" onClick={() => {deletePins(pins)}}>DELETE</Button>
-            </p>
-          </div>
-          )
-        })}
+        {pinsArray.length > 0 && display}
       </DefaultPage>
     </>
   );
