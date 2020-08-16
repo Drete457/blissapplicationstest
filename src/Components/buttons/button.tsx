@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, { ReactElement } from 'react';
 import { buttonFormat } from '../../Type/buttonformat';
 
 export default function Button({ className, children, onClick }: buttonFormat): ReactElement {
@@ -7,4 +7,4 @@ export default function Button({ className, children, onClick }: buttonFormat): 
       {children}
     </button>
   );
-}
+};

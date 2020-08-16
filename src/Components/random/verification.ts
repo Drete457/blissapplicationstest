@@ -7,7 +7,7 @@ export default function verification(numberToVerify: numberFormatInicial, random
   const values = Object.values(numberToVerify);
   const array = randomNumber.toString().split('').map(Number);
 
-  if (values.indexOf(randomNumber) !== -1){ 
+  if (values.indexOf(randomNumber) !== -1) {
     return true;
   } else if (consecutive(array)) {
     return true;
@@ -16,4 +16,4 @@ export default function verification(numberToVerify: numberFormatInicial, random
   };
 
   return false;
-}
+};

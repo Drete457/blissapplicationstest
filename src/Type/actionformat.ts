@@ -6,4 +6,4 @@ export type actionSaveFormat = {
 export type actionDeleteFormat = {
     type: "DELETE",
     payload: object,
-}
+};

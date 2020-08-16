@@ -5,4 +5,4 @@ export default function Input({ type, className, value, readOnly, onChange, plac
   return (
     <input type={type} className={className} value={value} readOnly={readOnly} onChange={onChange} placeholder={placeholder} />
   );
-}
+};

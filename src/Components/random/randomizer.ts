@@ -12,16 +12,16 @@ export default function randomizer(numberToWork: numberFormatInicial): numberFor
         let randomNumber = random();
 
         while (verification(newRNumber, randomNumber)) {
-            randomNumber = random();   
+            randomNumber = random();
         };
 
         newRNumber = {
             ...newRNumber,
             [key]: randomNumber,
         };
-    })
+    });
 
-    return {...newRNumber}
-}
+    return { ...newRNumber };
+};
 
 

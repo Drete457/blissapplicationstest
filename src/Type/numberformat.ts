@@ -4,10 +4,10 @@ export type numberFormatInicial = {
     three: number;
     four: number;
     five: number;
-}
+};
 
 export type numberFormat = {
-    name: string;
+    name?: string,
     one: number;
     two: number;
     three: number;
