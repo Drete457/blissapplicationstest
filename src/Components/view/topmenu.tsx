@@ -7,7 +7,7 @@ export default function TopMenu() {
   return (
     <>
       <nav className="NavBar">
-        <ButtonLink className="ButtonLink" to="/">Generate</ButtonLink>
+        <ButtonLink className="ButtonLink" to="/generate">Generate</ButtonLink>
         <ButtonLink className="ButtonLink" to="/saved">Saved</ButtonLink>
       </nav>
     </>
