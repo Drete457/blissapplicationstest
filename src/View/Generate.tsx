@@ -27,15 +27,24 @@ export default function Generate() {
   const dispatch = useDispatch();
   const onAddPins = (pins: object) => {
 
-    const result = pinsArray.indexOf(pins);
-    
-    if (result === -1) {
-      console.log("sim")
-      dispatch(addPin(pins));
+    let result = false;
+    const pinValues: number[] = Object.values(pins);
+
+    pinsArray.map((value) => {
+      const values = Object.values(value);
+      
+      if (values[1] === pinValues[0] && values[2] === pinValues[1] && values[3] === pinValues[2] && values[4] === pinValues[3] && values[5] === pinValues[4]) {
+        result = true;
+      }
+      
+      return null;
+    });
+
+  if (!result) {
+    dispatch(addPin({'name': '', ...pins}));
       setMessage('Pins have been saved successfully');
       setWasSave(true);
     } else {
-      console.log("nao")
       setMessage('cannot be saved again');
       setWasSave(true)
     }
