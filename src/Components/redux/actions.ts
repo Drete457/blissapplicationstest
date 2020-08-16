@@ -4,7 +4,7 @@ export const addPin = (pins: object): actionSaveFormat => ({
   type: "ADD_PINS", payload: pins
 });
 
-export const updatePins = (pins: object[]): actionUpdateFormat => ({
+export const updatePins = (pins: object): actionUpdateFormat => ({
   type: "UPDATE", payload: pins
 });
 

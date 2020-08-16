@@ -5,7 +5,7 @@ export type actionSaveFormat = {
 
 export type actionUpdateFormat = {
     type: "UPDATE",
-    payload: object[],
+    payload: object,
 };
 
 export type actionDeleteFormat = {

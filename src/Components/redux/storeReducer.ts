@@ -14,7 +14,21 @@ export const action = (state: pinsState = inicialState, action: actionSaveFormat
             return { ...state, pins: [...state.pins, action.payload] };
         }
         case "UPDATE": {
-            return { ...state, pins: [...action.payload] };
+            const pinValues = Object.values(action.payload);
+            let index = 0;
+
+            state.pins.filter((value, i) => {
+                const values = Object.values(value);
+          
+                if (values[1] === pinValues[1] && values[2] === pinValues[2] && values[3] === pinValues[3] && values[4] === pinValues[4] && values[5] === pinValues[5]) {
+                    index = i
+                }
+          
+                return null;
+            });
+       
+            state.pins[index] = action.payload;
+            return { ...state, pins: [...state.pins] };
         }
         case "DELETE": {
             const index = state.pins.indexOf(action.payload);
