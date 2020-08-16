@@ -46,6 +46,7 @@ body {
 }
 
 .buttondelete {
+  margin-left: 1%;
   background-color: red;
   color: white;
 }
