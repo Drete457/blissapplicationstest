@@ -10,10 +10,12 @@ Test the application [here](https://blissapplicationstest-git-master.drete457.ve
 
 With Git and Node.js installed on your machine, use this commands to run the project:
 
+```
 git clone https://github.com/Drete457/blissapplicationstest.git
 cd blissapplicationstest
 npm install
 npm start
+```
 
 ## Tecnologies
 
